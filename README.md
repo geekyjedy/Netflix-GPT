@@ -11,15 +11,13 @@
 - tmdb apis for dynamic movie data
 ## Have a look at project :
 - Sign In Page
-![landing page](./project-images/sign-in.png "a title")
+<img alt="GPT search page" src="./project-images/sign-in.png"/>
 ---
 - Sign Up Page
-![landing page](./project-images//sign-up.png "a title")
+<img alt="GPT search page" src="./project-images/sign-up.png"/>
 ---
 - Landing Page
-![landing page](./project-images/landing-page.png "a title")
+<img alt="GPT search page" src="./project-images/landing-page.png"/>
 ---
 - GPT Search Page
-![landing page](./project-images//gpt-search-on.png "a title")
-
-
+<img alt="GPT search page" src="./project-images/gpt-search-on.png"/>
