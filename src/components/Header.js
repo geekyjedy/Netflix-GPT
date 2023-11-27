@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { addUser, removeUser } from "../utils/userSlice";
 import { useNavigate } from "react-router-dom";
 import { LOGO, USER_AVATAR } from "./constant";
+import { toggleGpt } from "../utils/gptSlice";
 
 const Header = () => {
   const dispatch = useDispatch();
@@ -45,6 +46,12 @@ const Header = () => {
     });
     return ()=>unsubscribe();
   }, []);
+
+  const gptSearchClick = ()=>{
+    dispatch(toggleGpt())
+  }
+
+  const gptValue = useSelector(store=>store.gpt.showGptSearch)
   return (
     <div className="absolute w-full bg-black z-10 flex justify-between ">
       <img
@@ -54,6 +61,12 @@ const Header = () => {
       />
       {user && (
         <div className="flex items-center ">
+          <button
+            onClick={gptSearchClick}
+            className="bg-indigo-600 text-white p-3 rounded-lg hover:bg-indigo-700 "
+          >
+            {gptValue ?"GPT Search on" :" GPT Search off "}
+          </button>
           <img className="h-12 w-12 m-4" alt="user-icon" src={USER_AVATAR} />
           <button
             onClick={signoutFunction}

@@ -8,7 +8,7 @@ const MovieContent=()=> {
   return (
     movie &&(
 
-      <div className="py-20">
+      <div className="py-5">
     <MovieList title={"Now Playing"} movie={movie.mostPopularMovie}/>
     <MovieList title={"Top Rated"} movie={movie.topRatedMovie}/>
     <MovieList title={"Upcoming Movies"} movie={movie.upComingMovie}/>
