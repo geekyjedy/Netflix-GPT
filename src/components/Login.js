@@ -22,6 +22,10 @@ const Login = () => {
   //-----useState for error message storing
   const [errMessage, setErrMessage] = useState(null);
 
+  //----password hide and show functionality
+
+  const [pass, setPass] = useState(true);
+
   //-----useRef for getting reference of data from email and password fields
   const name = useRef(null);
   const email = useRef(null);
@@ -63,12 +67,10 @@ const Login = () => {
                 })
               );
               // dispatch();
-              
             })
             .catch((error) => {
               setErrMessage(error.message);
             });
-          
 
           // console.log(user);
           //this user is object of our newly signed up user
@@ -87,7 +89,6 @@ const Login = () => {
         .then((userCredential) => {
           // Signed in
           // const user = userCredential.user;
-          
         })
         .catch((error) => {
           const errorCode = error.code;
@@ -103,6 +104,12 @@ const Login = () => {
   //--------signin/signup form toggle function
   const checkIsSignUp = () => {
     setIsSignUp(!isSignUp);
+  };
+
+  //---password handle function
+
+  const passwordHandle = () => {
+    setPass(!pass);
   };
   return (
     <>
@@ -132,13 +139,17 @@ const Login = () => {
           placeholder="Email Address"
           className=" focus:outline-none text-xs my-2 p-2 rounded bg-[#333] w-full bg-opacity-80 "
         />
-
-        <input
-          type="password"
-          ref={password}
-          placeholder="Password"
-          className="focus:outline-none text-xs my-2 p-2 rounded bg-[#333] w-full bg-opacity-80"
-        />
+        <div >
+          <input
+            type={pass ? "text" : "password"}
+            ref={password}
+            placeholder="Password"
+            className="focus:outline-none text-xs my-2 p-2 rounded bg-[#333]  bg-opacity-80"
+          />
+          <span className="cursor-pointer text-xs inline" onClick={passwordHandle}>
+            {pass ? "hide" : "show"}
+          </span>
+        </div>
         <button
           type="button"
           className="hover:bg-red-700 focus:outline-none py-2 my-2 bg-red-600 w-full rounded text-xs"
