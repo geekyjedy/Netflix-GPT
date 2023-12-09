@@ -1,3 +1,7 @@
+### [Project Live Here](https://geekyjedy-netflixgpt.vercel.app/)
+(under development)
+
+
 ## Technologies :
 - tailwindcss
 - react hooks
